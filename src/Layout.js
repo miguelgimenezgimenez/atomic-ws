@@ -1,38 +1,59 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import FolderIcon from '@material-ui/icons/Folder';
 import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-const useStyles = makeStyles({
-  root: {
-    width: 500,
-  },
-});
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-export default function LabelBottomNavigation() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState('recents');
+import style from './Layout.module.css';
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-
-      <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
-      <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
-    </BottomNavigation>
-  );
+export default function LabelBottomNavigation({ children }) {
+    const [ value, setValue ] = React.useState('recents');
+    const history = useHistory();
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+    const title = history.location.pathname.slice(1).toUpperCase();
+    return (
+        <div>
+            <div className={style.title}>{title}</div>
+            <div>{children}</div>
+            <div className={style.layout}>
+                <BottomNavigation value={value} onChange={handleChange}>
+                    <BottomNavigationAction
+                        component={Link}
+                        to="thoughts"
+                        label="Recents"
+                        value="recents"
+                        icon={<RestoreIcon />}
+                    />
+                    <BottomNavigationAction
+                        component={Link}
+                        to="thoughts"
+                        label="Favorites"
+                        value="favorites"
+                        icon={<FavoriteIcon />}
+                    />
+                    <BottomNavigationAction
+                        component={Link}
+                        to="thoughts"
+                        label="Nearby"
+                        value="nearby"
+                        icon={<LocationOnIcon />}
+                    />
+                    <BottomNavigationAction
+                        component={Link}
+                        to="thoughts"
+                        label="Folder"
+                        value="folder"
+                        icon={<FolderIcon />}
+                    />
+                </BottomNavigation>
+            </div>
+        </div>
+    );
 }

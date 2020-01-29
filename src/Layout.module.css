@@ -1,0 +1,9 @@
+.title {
+  text-align:center;
+  margin: 30px;
+}
+.layout { 
+  position: fixed;
+  bottom:0;
+  width: 100%;
+}

@@ -1,13 +1,23 @@
 import React from 'react';
-import Layout from './Layout'
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Layout from './Layout';
+import ThoughtsPage from './pages/ThoughtsPage';
 
 function App() {
-  return (
-    <div className="App">
-    <Layout></Layout>
-    </div>
-  );
+    return (
+        <Router>
+            <Route
+                exact
+                path={[ '/', '/thoughts' ]}
+                render={(props) => (
+                    <Layout>
+                        <ThoughtsPage />
+                    </Layout>
+                )}
+            />
+        </Router>
+    );
 }
 
 export default App;
