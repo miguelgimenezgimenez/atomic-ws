@@ -1,5 +1,5 @@
 import React from 'react';
-import ThoughtsList from '../../components/containers/ThoughtsList';
+import ThoughtsList from '../../containers/ThoughtsList';
 import Button from '@material-ui/core/Button';
 import styles from './ThoughtsPage.module.css'
 

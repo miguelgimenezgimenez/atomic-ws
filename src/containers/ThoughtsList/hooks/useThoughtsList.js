@@ -1,7 +1,7 @@
 
 import { useSelector } from 'react-redux';
 
-import { thoughtsSelector } from '../../../../reducers/thoughts';
+import { thoughtsSelector } from '../../../reducers/thoughts';
 
 export default () => {
     // const dispatch = useDispatch();
