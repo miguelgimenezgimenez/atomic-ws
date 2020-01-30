@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Layout from './Layout';
 import ThoughtsPage from './pages/ThoughtsPage';
+import Home from './pages/Home';
 import ThoughtDetailPage from './pages/ThoughtDetailPage';
 import Modal from './containers/Modal/Modal';
 
@@ -25,7 +26,8 @@ function App() {
         <>
             <Modal/>
             <Router>
-                <RouteWithLayout exact path={[ '/', '/thoughts' ]} Component={ThoughtsPage} />
+                <RouteWithLayout exact path={['/','/home']} Component={Home} />
+                <RouteWithLayout exact path={'/thoughts'} Component={ThoughtsPage} />
                 <Route path={`/thoughts/:thoughtId`} component={ThoughtDetailPage}/>
             </Router>
         </>
