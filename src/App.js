@@ -24,8 +24,6 @@ function App() {
         <Router>
             <RouteWithLayout exact path={[ '/', '/thoughts' ]} Component={ThoughtsPage} />
             <Route path={`/thoughts/:thoughtId`} component={ThoughtDetailPage}/>
-               
-
         </Router>
     );
 }
