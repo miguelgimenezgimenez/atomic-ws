@@ -24,7 +24,7 @@ const INITIAL_STATE = {
             mood: SUPER_HAPPY
         }
     ],
-    currentThought: null
+    currentThought: {}
 };
 
 export default (state = INITIAL_STATE, action) => {
