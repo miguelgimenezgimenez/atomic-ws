@@ -1,4 +1,4 @@
-import { HAPPY, SUPER_HAPPY, SAD, SUPER_SAD, SET_CURRENT_THOUGHT } from '../constants';
+import {  SUPER_HAPPY, SAD, SUPER_SAD, SET_CURRENT_THOUGHT } from '../constants';
 
 const INITIAL_STATE = {
     thoughtsList: [
