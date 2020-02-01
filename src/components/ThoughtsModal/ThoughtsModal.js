@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './ThoughtsModal.module.css';
+import styles from './ThoughtsModal.module.scss';
 
 const ThoughtsModal = ({ text, detail }) => (
     <div className={styles.container}>

@@ -2,19 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Layout from './Layout';
-import ThoughtsPage from './pages/ThoughtsPage';
-import Home from './pages/Home';
-import ThoughtDetailPage from './pages/ThoughtDetailPage';
-import Modal from './containers/Modal/Modal';
+import ThoughtsPage from '#/ThoughtsPage';
+import Home from '#/Home';
+import ThoughtDetailPage from '#/ThoughtDetailPage';
+import Modal from '&/Modal';
 
-// could be a HOC
 function RouteWithLayout({ Component, ...props }) {
     return (
         <Route
             {...props}
-            render={(ownProps) => (
+            render={(routerProps) => (
                 <Layout>
-                    <Component {...ownProps} />
+                    <Component {...routerProps} />
                 </Layout>
             )}
         />

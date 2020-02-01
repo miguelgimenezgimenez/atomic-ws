@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '@material-ui/core/Icon';
 import TextWithDetail from '../TextWithDetail';
-import style from './ThoughstList.module.css';
+import style from './ThoughstList.module.scss';
 import { useHistory } from 'react-router-dom';
 
 function ThoughtListItem({ text, detail, icon, id }) {

@@ -1,6 +1,6 @@
-import { modalSelector,modalComponentSelector } from '../../../reducers/ui';
+import { modalSelector,modalComponentSelector } from '~/reducers/ui';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleModal } from '../../../actions/ui';
+import { toggleModal } from '~/actions/ui';
 
 export default () => {
     const dispatch = useDispatch();

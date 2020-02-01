@@ -1,8 +1,8 @@
 import React from 'react';
 import MaterialDialog from '@material-ui/core/Dialog';
 import useDialog from './hooks/useDialog';
-import ThoughtsModal from '../../components/ThoughtsModal';
-import { THOUGHTS_MODAL } from '../../constants/index';
+import ThoughtsModal from '@/ThoughtsModal';
+import { THOUGHTS_MODAL } from '~/constants/index';
 
 const modals = {
     [THOUGHTS_MODAL]: ThoughtsModal

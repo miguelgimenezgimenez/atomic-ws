@@ -1,7 +1,7 @@
 import React from 'react';
-import ThoughtsList from '../../containers/ThoughtsList';
+import ThoughtsList from '&/ThoughtsList';
 import Button from '@material-ui/core/Button';
-import styles from './ThoughtsPage.module.css';
+import styles from './ThoughtsPage.module.scss';
 import useThoughtsPage from './hooks/useThoughtsPage';
 
 function ThoughtsPage() {

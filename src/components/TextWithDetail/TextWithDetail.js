@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './TextWithDetail.module.css';
+import styles from './TextWithDetail.module.scss';
 
 const TextWithDetail = ({ text, detail }) => (
     <div className={styles.container}>

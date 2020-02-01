@@ -6,7 +6,7 @@ import { Sad, AccountCircleIcon } from './assets/icons';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
-import style from './Layout.module.css';
+import style from './Layout.module.scss';
 
 export default function Layout({ children }) {
     const [ value, setValue ] = React.useState('HOME');

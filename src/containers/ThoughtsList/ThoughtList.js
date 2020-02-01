@@ -1,9 +1,9 @@
 import React from 'react';
-import { Happy, SuperHappy, Sad, SuperSad } from '../../assets/icons';
+import { Happy, SuperHappy, Sad, SuperSad } from '~/assets/icons';
 import useThoughtsList from './hooks/useThoughtsList';
-import ThoughtListItem from '../../components/ThoughtListItem';
+import ThoughtListItem from '@/ThoughtListItem';
 
-import { HAPPY, SUPER_HAPPY, SAD, SUPER_SAD } from '../../constants';
+import { HAPPY, SUPER_HAPPY, SAD, SUPER_SAD } from '~/constants';
 
 const mappedIcons = {
     [HAPPY]: Happy,
