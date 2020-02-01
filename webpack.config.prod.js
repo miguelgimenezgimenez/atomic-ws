@@ -5,9 +5,21 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const outPath = path.join(__dirname, './public');
+
 
 module.exports = {
     mode: 'production',
+    entry: {
+        main: './src/index.js'
+      },
+     
+    output: {
+        path: outPath,
+        filename: 'bundle.js',
+        chunkFilename: '[chunkhash].js',
+        publicPath: '/'
+      },
     resolve: {
         alias: {
             '~': path.resolve(__dirname, 'src'),
@@ -65,19 +77,25 @@ module.exports = {
         usedExports: true,
         minimizer: [ new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({}) ],
         splitChunks: {
+            name: true,
             cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all'
-                }
+              commons: {
+                chunks: 'initial',
+                minChunks: 2
+              },
+              vendors: {
+                test: /[\\/]node_modules[\\/]/,
+                chunks: 'all',
+                priority: -10
+              }
             }
-        }
+          },
     },
     plugins: [
         new HtmlWebPackPlugin({
             template: './www/index.html',
             filename: './index.html',
+            inject:true,
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -91,6 +109,7 @@ module.exports = {
                 minifyURLs: true
             }
         }),
+
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css'

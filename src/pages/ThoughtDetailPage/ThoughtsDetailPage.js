@@ -9,6 +9,7 @@ function ThoughtsDetailPage({ match }) {
     const { currentThought } = useThoughtsDetailPage(thoughtId);
     return (
         <div>
+            <TextWithDetail text={currentThought.title} detail={currentThought.date}></TextWithDetail>
             <div>
                 <TextWithDetail text={EVIDENCE_QUESTION} detail={currentThought.evidence} />
             </div>
