@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -92,7 +91,6 @@ module.exports = {
                 minifyURLs: true
             }
         }),
-        new Dotenv(),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css'
