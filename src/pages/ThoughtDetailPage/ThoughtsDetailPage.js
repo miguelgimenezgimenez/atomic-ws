@@ -2,7 +2,8 @@ import React from 'react';
 
 import useThoughtsDetailPage from './hooks/useThoughtsDetailPage';
 import TextWithDetail from '@/TextWithDetail';
-import {EVIDENCE_QUESTION} from '~/constants'
+
+import { EVIDENCE_QUESTION } from '~/constants';
 function ThoughtsDetailPage({ match }) {
     const { thoughtId } = match.params;
     const { currentThought } = useThoughtsDetailPage(thoughtId);
