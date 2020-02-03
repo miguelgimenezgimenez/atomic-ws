@@ -7,25 +7,24 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const outPath = path.join(__dirname, './public');
 
-
 module.exports = {
     mode: 'production',
     entry: {
         main: './src/index.js'
-      },
-     
+    },
+
     output: {
         path: outPath,
         filename: 'bundle.js',
         chunkFilename: '[chunkhash].js',
         publicPath: '/'
-      },
+    },
     resolve: {
         alias: {
             '~': path.resolve(__dirname, 'src'),
             '@': path.resolve(__dirname, 'src/components'),
             '&': path.resolve(__dirname, 'src/containers'),
-            '#': path.resolve(__dirname, 'src/pages'),
+            '#': path.resolve(__dirname, 'src/pages')
         }
     },
     module: {
@@ -79,23 +78,23 @@ module.exports = {
         splitChunks: {
             name: true,
             cacheGroups: {
-              commons: {
-                chunks: 'initial',
-                minChunks: 2
-              },
-              vendors: {
-                test: /[\\/]node_modules[\\/]/,
-                chunks: 'all',
-                priority: -10
-              }
+                commons: {
+                    chunks: 'initial',
+                    minChunks: 2
+                },
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    chunks: 'all',
+                    priority: -10
+                }
             }
-          },
+        }
     },
     plugins: [
         new HtmlWebPackPlugin({
             template: './www/index.html',
             filename: './index.html',
-            inject:true,
+            inject: true,
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
