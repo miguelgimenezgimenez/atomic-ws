@@ -2,14 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ThoughtsModal.module.scss';
 
-const ThoughtsModal = ({ text, detail }) => (
+const ThoughtsModal = () => (
     <div className={styles.container}>
        THOUGHTS
     </div>
 );
-ThoughtsModal.propType = {
-    text: PropTypes.string.isRequired,
-    detail: PropTypes.string
-};
 
 export default ThoughtsModal;
