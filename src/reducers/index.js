@@ -1,4 +1,4 @@
-import thoughts from './thoughts';
+import items from './items';
 import ui from './ui';
 
-export default { thoughts, ui };
+export default { items, ui };
