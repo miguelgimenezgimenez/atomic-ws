@@ -23,13 +23,13 @@ module.exports = {
         alias: {
             '~': path.resolve(__dirname, 'src'),
             '~atoms': path.resolve(__dirname, 'src/components/atoms'),
-          
+
             '~molecules': path.resolve(__dirname, 'src/components/molecules'),
-          
+
             '~organisms': path.resolve(__dirname, 'src/components/organisms'),
 
             '~templates': path.resolve(__dirname, 'src/components/templates'),
-          
+
             '#': path.resolve(__dirname, 'src/pages')
         }
     },
@@ -81,20 +81,20 @@ module.exports = {
     optimization: {
         usedExports: true,
         minimizer: [ new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({}) ],
-        // splitChunks: {
-        //     name: true,
-        //     cacheGroups: {
-        //         commons: {
-        //             chunks: 'initial',
-        //             minChunks: 2
-        //         },
-        //         vendors: {
-        //             test: /[\\/]node_modules[\\/]/,
-        //             chunks: 'all',
-        //             priority: -10
-        //         }
-        //     }
-        // }
+        splitChunks: {
+            name: true,
+            cacheGroups: {
+                commons: {
+                    chunks: 'initial',
+                    minChunks: 2
+                },
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    chunks: 'all',
+                    priority: -10
+                }
+            }
+        }
     },
     plugins: [
         new HtmlWebPackPlugin({
