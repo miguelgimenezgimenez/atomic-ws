@@ -11,5 +11,4 @@ const TextWithDetail = ({ text, detail }) => (
     </div>
 );
 
-
 export default TextWithDetail;

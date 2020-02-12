@@ -7,6 +7,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const outPath = path.join(__dirname, './public');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
     mode: 'production',
     entry: {
@@ -16,7 +17,7 @@ module.exports = {
     output: {
         path: outPath,
         filename: 'bundle.js',
-        chunkFilename: '[name].js',
+        chunkFilename: '[chunkHash].js',
         publicPath: '/'
     },
     resolve: {
