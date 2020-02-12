@@ -86,6 +86,8 @@ module.exports = {
             filename: './index.html'
         }),
         new CleanWebpackPlugin(),
+        new BundleAnalyzerPlugin(),
+
         // new webpack.HotModuleReplacementPlugin()
     ]
 };

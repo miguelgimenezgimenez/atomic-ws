@@ -17,16 +17,25 @@
   "plugins": [
     "@babel/plugin-transform-runtime",
     "@babel/plugin-syntax-dynamic-import",
-
-
-    // [
-    //   "babel-plugin-transform-imports",
-    //   {
-    //     "@material-ui/core": {
-    //       "transform": "@material-ui/core/esm/${member}",
-    //       "preventFullImport": true
-    //     }
-    //   }
-    // ]
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "@material-ui/core",
+        // Use ""libraryDirectory": "," if your bundler does not support ES modules
+        "libraryDirectory": "esm",
+        "camel2DashComponentName": false
+      },
+      "core"
+    ],
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "@material-ui/icons",
+        // Use ""libraryDirectory": "," if your bundler does not support ES modules
+        "libraryDirectory": "esm",
+        "camel2DashComponentName": false
+      },
+      "icons"
+    ]
   ]
 }

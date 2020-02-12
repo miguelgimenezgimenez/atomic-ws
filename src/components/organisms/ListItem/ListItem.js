@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '@material-ui/core/Icon';
+import { Icon } from '@material-ui/core';
 import TextWithDetail from '~molecules/TextWithDetail';
 import style from './ListItem.module.scss';
 import { useHistory } from 'react-router-dom';

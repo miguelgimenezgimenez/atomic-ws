@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
 
 import ItemsList from '~organisms/ItemsList';
 import styles from './ItemsPage.module.scss';
@@ -10,7 +10,7 @@ import Navigation from '~organisms/Navigation/Navigation';
 function ItemsPage() {
     const { addItem } = useItemsPage();
     return (
-        <Layout footer={<Navigation/>} header="items" >
+        <Layout footer={<Navigation />} header="items">
             <ItemsList />
             <div className={styles.button}>
                 <Button onClick={addItem} variant="contained" color="primary">
