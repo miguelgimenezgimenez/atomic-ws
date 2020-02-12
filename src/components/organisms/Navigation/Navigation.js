@@ -1,7 +1,7 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { BottomNavigation } from '@material-ui/core';
+import { BottomNavigationAction } from '@material-ui/core';
 import { Sad, AccountCircleIcon } from '~/assets/icons';
 import { Link, useHistory } from 'react-router-dom';
 

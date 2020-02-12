@@ -11,12 +11,6 @@ module.exports = {
         main: './src/index.js'
     },
 
-    output: {
-        path: outPath,
-        filename: 'bundle.js',
-        chunkFilename: '[name].js',
-        publicPath: '/'
-    },
     resolve: {
         alias: {
             '~': path.resolve(__dirname, 'src'),
@@ -81,7 +75,7 @@ module.exports = {
         contentBase: './dist',
         hot: true,
         open: true,
-        historyApiFallback: true
+        // historyApiFallback: true
 
     },
     optimization: {
@@ -93,8 +87,6 @@ module.exports = {
             filename: './index.html'
         }),
         new CleanWebpackPlugin(),
-        new BundleAnalyzerPlugin(),
-
-        new webpack.HotModuleReplacementPlugin()
+        // new webpack.HotModuleReplacementPlugin()
     ]
 };

@@ -6,7 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const outPath = path.join(__dirname, './public');
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
     mode: 'production',
     entry: {
@@ -14,9 +14,9 @@ module.exports = {
     },
 
     output: {
-        // path: outPath,
-        // filename: 'bundle.js',
-        // chunkFilename: '[name].js',
+        path: outPath,
+        filename: 'bundle.js',
+        chunkFilename: '[name].js',
         publicPath: '/'
     },
     resolve: {
@@ -81,20 +81,20 @@ module.exports = {
     optimization: {
         usedExports: true,
         minimizer: [ new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({}) ],
-        splitChunks: {
-            name: true,
-            cacheGroups: {
-                commons: {
-                    chunks: 'initial',
-                    minChunks: 2
-                },
-                vendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    chunks: 'all',
-                    priority: -10
-                }
-            }
-        }
+        // splitChunks: {
+        //     name: true,
+        //     cacheGroups: {
+        //         commons: {
+        //             chunks: 'initial',
+        //             minChunks: 2
+        //         },
+        //         vendors: {
+        //             test: /[\\/]node_modules[\\/]/,
+        //             chunks: 'all',
+        //             priority: -10
+        //         }
+        //     }
+        // }
     },
     plugins: [
         new HtmlWebPackPlugin({
@@ -119,6 +119,7 @@ module.exports = {
             filename: '[name].css',
             chunkFilename: '[id].css'
         }),
+        new BundleAnalyzerPlugin(),
 
         new CleanWebpackPlugin()
     ]

@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialDialog from '@material-ui/core/Dialog';
+import { Dialog } from '@material-ui/core';
 import useModal from './hooks/useModal';
 import FormModal from '~organisms/FormModal';
 import { FORM_MODAL } from '~/constants';
@@ -13,11 +13,9 @@ function Modal() {
     const CurrentModal = modals[modalComponent];
 
     return (
-        <MaterialDialog onClose={handleClose} open={modalOpen}>
-            <div>
-            { CurrentModal? <CurrentModal />:null}
-            </div>
-        </MaterialDialog>
+        <Dialog onClose={handleClose} open={modalOpen}>
+            <div>{CurrentModal ? <CurrentModal /> : null}</div>
+        </Dialog>
     );
 }
 export default Modal;
