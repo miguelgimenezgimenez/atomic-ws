@@ -39,5 +39,4 @@ export default (state = INITIAL_STATE, action) => {
 };
 
 export const itemsSelector = (state) => state.items.itemsList;
-
 export const currentItemSelector = (state) => state.items.currentItem;

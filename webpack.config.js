@@ -70,13 +70,12 @@ module.exports = {
             }
         ]
     },
-    devtool: 'eval-source-map',
+    devtool: 'none',
     devServer: {
         contentBase: './dist',
         hot: true,
         open: true,
-        // historyApiFallback: true
-
+        historyApiFallback: true
     },
     optimization: {
         usedExports: true
