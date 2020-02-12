@@ -10,18 +10,20 @@ module.exports = {
     entry: {
         main: './src/index.js'
     },
-
+    output: {
+        publicPath: '/'
+    },
     resolve: {
         alias: {
             '~': path.resolve(__dirname, 'src'),
             '~atoms': path.resolve(__dirname, 'src/components/atoms'),
-          
+
             '~molecules': path.resolve(__dirname, 'src/components/molecules'),
-          
+
             '~organisms': path.resolve(__dirname, 'src/components/organisms'),
 
             '~templates': path.resolve(__dirname, 'src/components/templates'),
-          
+
             '#': path.resolve(__dirname, 'src/pages')
         }
     },
@@ -86,7 +88,7 @@ module.exports = {
             filename: './index.html'
         }),
         new CleanWebpackPlugin(),
-        new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin()
 
         // new webpack.HotModuleReplacementPlugin()
     ]
