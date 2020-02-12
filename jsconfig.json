@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    // "target": "es2020",
-    // "module": "es6",
-    // "baseUrl": "./",
-    // "paths": {
-    //   "~/*": ["./src/*"],
-    //   "@/*": ["./src/components/*/index.js"],
-    //   "&/*": ["./src/containers/*/index.js"],
-    //   "#/*": ["./src/pages/*/index.js"],
-    // }
+    "target": "es2020",
+    "module": "es6",
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./src/*"],
+      "~atoms/*": ["./src/components/atoms/*/index.js"],
+      "~molecules/*": ["./src/components/molecules/*/index.js"],
+      "~organisms/*": ["./src/components/organisms/*/index.js"],
+      "#/*": ["./src/components/pages/*/index.js"],
+
+    }
   },
   "exclude": ["node_modules"]
 }
